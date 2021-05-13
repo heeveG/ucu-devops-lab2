@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Product list:</h3>
+
+<table>
+      <tr>
+        <th>ID</th>
+        <th>Product</th>
+        <th>Amount</th>
+      </tr>
+      <% for(var i=0; i<prods.length; ++i) {%>
+        <tr>
+            <td><%= prods[i].id %></td>
+            <td><%= prods[i].prod %></td>
+            <td><%= prods[i].amnt %></td>
+        </tr>
+      <% } %>
+</table>  
+
+<br><br>
+<b>Submition form:</b>
+
+<form method="POST" action="/submit-form">
+  <label for="prod">Product</label><br>
+  <input type="text" id="prod" name="prod"><br>
+  <label for="number">Amount</label><br>
+  <input type="number" id="amnt" name="amnt"><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+<br><br>
+<b>Deletion form:</b>
+
+<form method="POST" action="/delete-form">
+  <label for="prod">Id</label><br>
+  <input type="text" id="id" name="id"><br><br>
+  <input type="submit" value="Delete">
+</form> 
+
+<br><br>
+<b>Modification form:</b>
+
+<form method="POST" action="/modify-form">
+  <label for="prod">Id</label><br>
+  <input type="text" id="id" name="id"><br>
+  <label for="number">Amount</label><br>
+  <input type="number" id="amnt" name="amnt"><br><br>
+  <input type="submit" value="Modify">
+</form> 
+
+
+<script>
+  function show(){
+    $( "#yourmodal" ).load( "/showmodalroute" );
+    }
+</script>
+
+</body>
+</html>
